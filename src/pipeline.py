@@ -1,8 +1,6 @@
 import torch
 from PIL.Image import Image
 from diffusers import AutoencoderTiny
-from sfast.compilers.diffusion_pipeline_compiler import (compile,
-                                                         CompilationConfig)
 from pipelines.models import TextToImageRequest
 from torch import Generator
 
