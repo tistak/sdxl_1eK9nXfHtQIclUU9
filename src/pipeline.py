@@ -1324,7 +1324,7 @@ def load_pipeline(pipeline=None) -> StableDiffusionXLPipeline:
     pipeline.vae = AutoencoderTiny.from_pretrained("madebyollin/taesdxl", torch_dtype=torch.float16).to('cuda')
     pipeline = compile_pipe(pipeline)
     for _ in range(3):
-        pipeline(prompt="photo of a dog", num_inference_steps=10)
+        pipeline(prompt="", num_inference_steps=10)
 
     return pipeline
 
@@ -1339,5 +1339,5 @@ def infer(request: TextToImageRequest, pipeline: StableDiffusionXLPipeline) -> I
         width=request.width,
         height=request.height,
         generator=generator,
-        num_inference_steps=8,
+        num_inference_steps=18,
     ).images[0]
