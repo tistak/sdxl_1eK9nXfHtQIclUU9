@@ -1323,7 +1323,7 @@ def load_pipeline(pipeline=None) -> StableDiffusionXLPipeline:
         ).to("cuda")
     pipeline = compile_pipe(pipeline)
     for _ in range(3):
-        pipeline(prompt="photo of a dog", num_inference_steps=19)
+        pipeline(prompt="photo of a dog", num_inference_steps=20)
 
     return pipeline
 
@@ -1338,5 +1338,6 @@ def infer(request: TextToImageRequest, pipeline: StableDiffusionXLPipeline) -> I
         width=request.width,
         height=request.height,
         generator=generator,
-        num_inference_steps=19,
+        end_cfg=0.3
+        num_inference_steps=20,
     ).images[0]
