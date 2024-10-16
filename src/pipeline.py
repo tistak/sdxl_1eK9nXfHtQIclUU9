@@ -1,6 +1,5 @@
 import torch
 from PIL.Image import Image
-from diffusers import AutoencoderTiny
 from pipelines.models import TextToImageRequest
 from torch import Generator
 
@@ -1341,6 +1340,6 @@ def infer(request: TextToImageRequest, pipeline: StableDiffusionXLPipeline) -> I
         width=request.width,
         height=request.height,
         generator=generator,
-        end_cfg=0.3
+        end_cfg=0.6,
         num_inference_steps=20,
     ).images[0]
