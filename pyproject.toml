@@ -19,7 +19,7 @@ dependencies = [
     "accelerate==0.31.0",
     "omegaconf==2.3.0",
     "torch==2.4.1",
-    "torchvision==0.17.2",
+    "torchvision==0.19.0",
     "edge-maxxing-pipelines @ git+https://github.com/womboai/edge-maxxing#subdirectory=pipelines",
 ]
 
